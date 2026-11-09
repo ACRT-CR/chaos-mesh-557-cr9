@@ -1290,10 +1290,6 @@ spec:
       targetPort: pprof
       protocol: TCP
       name: pprof
-    - port: 10082
-      targetPort: ctrl
-      protocol: TCP
-      name: ctrl
     - port: 10080
       targetPort: http
       protocol: TCP
@@ -1601,8 +1597,6 @@ spec:
             value: "false"
           - name: PPROF_ADDR
             value: ":10081"
-          - name: CTRL_ADDR
-            value: ":10082"
           - name: CHAOS_DNS_SERVICE_NAME
             value: chaos-mesh-dns-server
           - name: CHAOS_DNS_SERVICE_PORT
@@ -1632,8 +1626,6 @@ spec:
             containerPort: 10080
           - name: pprof
             containerPort: 10081
-          - name: ctrl
-            containerPort: 10082
       volumes:
         - name: webhook-certs
           secret:
